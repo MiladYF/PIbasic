@@ -1,0 +1,300 @@
+@import url('https://fonts.googleapis.com/css2?family=Cookie&family=Hurricane&family=Kaushan+Script&family=Patrick+Hand&family=Patrick+Hand+SC&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Patrick Hand", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+body  {
+    background-color: #f4dae0;
+    min-height: 100vh;
+    overflow-x: hidden;
+    
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+.logo {
+    font-size: 3rem;
+    color: #4f2330;
+    font-weight: 1000;
+    pointer-events: none;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: #4f2330;
+    padding: 6px 15px;
+    border-radius: 20px;
+    margin: 0 10px;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+.navigation a:hover,
+.navigation a.active  {
+    background: #4f2330;
+    color: #f4dae0;
+}
+.parallax {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow-y: auto;
+    overflow: hidden;
+}
+#text {
+    position: absolute;
+    font-size: 7rem;
+    color: #4f2330;
+    font-family: "Kaushan Script", cursive;
+    font-weight: 800;
+    font-style: normal;
+}
+#subtext {
+    position: absolute;
+    font-size: 2rem;
+    color: #4f2330;
+    font-family: "Patrick Hand SC", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.hero-btn {
+  position: absolute;
+  top: 65%;
+  bottom: 100px;
+  font-size: 2rem;
+  letter-spacing: 3px;
+  font-weight: 800;
+  background-color: transparent;
+  color: #4f2330;
+  border: 3px solid #4f2330;
+  height: 65px;
+  width: 400px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.hero-btn:hover {
+  background-color: #4f2330;
+  letter-spacing: 6px;
+  color: #f4dae0;
+  border-color: #4f2330;
+}
+.hero-btn-cont {
+  display: flex;
+  justify-content: center;
+}
+
+.parallax img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+}
+.context {
+    position: relative;
+    padding: 100px;
+    background: #f4dae0;
+}
+.style1 h2 {
+    font-size: 4rem;
+    position: relative;
+    background: #f4dae0;
+    color: #4f2330;
+    margin-bottom: 4rem;
+    margin: auto;
+    margin-top: 1.4rem;
+    line-height: 1;
+    font-weight: 600;
+    width: 90%;
+    
+    text-align: center;
+
+}
+h2 span {
+    display: inline-block;
+    animation: sanime linear 1s forwards;
+    opacity: 1;
+}
+@keyframes sanime {
+    0% {
+        transform: skew(-30deg) rotate(8deg) translate(0px,56px);
+        opacity: 0;
+    }
+}
+.section {
+    width: 90%;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-gap: 30px;
+    margin: auto;
+    animation-range: entry 40% cover 60%;
+}
+.section .img{
+    width: 90%;
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+    margin: auto;
+    margin-top: 20px;
+}
+.overlay1,.overlay2,.overlay3 {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: -100%;
+    left: 0px;
+    background: #f4dae0;
+}
+.video {
+    position: relative;
+    text-align: center;
+    animation-range: entry 60% cover 80%;
+    
+}
+img img{
+    width: 100%;
+    
+    object-fit: cover;
+}
+.fadeUp {
+    animation: fadeUp both;
+    animation-timeline: view();
+}
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px) scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+.style1 {
+    animation-range: entry 20% cover 40%;
+}
+.desc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: auto;
+}
+#description {
+    font-size: 1.5rem;
+    padding: 50px;
+    text-align: justify;
+}
+.join {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 150px;
+}
+.wrapper {
+    position: relative;
+    max-width: 730px;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    padding: 50px;
+    border-radius: 6px;
+}
+.wrapper h2 {
+    position: relative;
+    font-size: 4rem;
+    font-weight: 600;
+    color: #4f2330;
+
+}
+.wrapper form{
+    margin-top: 30px;
+}
+.wrapper form .input-box {
+    height: 52px;
+    margin: 18px 0;
+}
+form .input-box input {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    padding: 0 15px;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #333;
+    border: 1.5px solid #4f2330;
+    border-bottom-width: 2.5px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+.input-box input:focus,
+.input-box input:valid {
+    border-color: #f4dae0;
+}
+form .policy {
+    display: flex;
+    align-items: center;
+}
+form label{
+    color: #4f2330;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-left: 10px;
+}
+#submit-form{
+    color: #fff;
+    letter-spacing: 1px;
+    border: none;
+    background: #4f2330;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border: 1.5px solid #4f2330;
+    border-bottom-width: 2.5px;
+    border-radius: 6px;
+    padding: 10px 20px;
+    width: 100%;
+}
+#submit-form:hover{
+    background: #f4dae0;
+    color: #4f2330;
+}
+form .text h3{
+    color: #333;
+    width: 100%;
+    text-align: center;
+}
+form .text h3 a {
+    text-decoration: none;
+    color: #4f2330;
+}
+form .text h3 a:hover{
+    text-decoration: underline;
+}
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #4f2330;
+  color: white;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}

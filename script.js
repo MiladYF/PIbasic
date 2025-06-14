@@ -17,64 +17,51 @@ window.addEventListener('scroll', () => {
     _3.style.left = value * -1.5 + 'px';
 
 });
+//bener
 function handleGetFormData() {
-
-return {
-
-    name: document.getElementById('name').value,
-
-    email: document.getElementById('email').value,
-
-    city: document.getElementById('city').value,
-
-    zipCode: document.getElementById('zip-code').value,
-
-    status: document.getElementById('status').checked
-
-};
+    return {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        city: document.getElementById('city').value,
+        zipCode: document.getElementById('zip-code').value,
+        status: document.getElementById('status').checked
+    };
 }
-
+//bener
 function isNumber(string) {
-
-return !isNaN(string);
+    return !isNaN(string);
 }
 
-function checkboxIsChecked() {
-
-return document.getElementById('status').checked;
+function validateEmail(email) {
+    return /\S+@\S+\.\S+/.test(email);
 }
 
-function validateFormData(formData) {
-
-return formData !== null &&
-
-       isNumber(formData.zipCode) &&
-
-       checkboxIsChecked();
+function validateFullFormData(formData) {
+    if (
+        formData &&
+        typeof formData.zipCode === 'string' &&
+        isNumber(formData.zipCode) &&
+        document.getElementById('status').checked === true
+    ) {
+        return true;
+    }
+    return false;
 }
 
-function submit() {
+const warning = document.getElementById('warning');
+const form = document.getElementById('form');
 
-const data = handleGetFormData();
+if (form) {
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+        const formData = handleGetFormData();
 
-const warningDiv = document.getElementById('warning');
-
-
-
-if (validateFormData(data) == false) {
-
-    return warningDiv.textContent = 'Periksa form anda sekali lagi';
-
-} else {
-
-   return warningDiv.textContent = ' ';
-
+        if (!validateFullFormData(formData)) {
+            warning.textContent = 'Periksa form anda sekali lagi';
+            alert('Periksa form anda sekali lagi');
+        } else {
+            warning.textContent = '';
+            console.log('Data form valid:', formData);
+        }
+    });
 }
-}
-
-document.getElementById('submit-form').addEventListener('click', (event) => {
-
-event.preventDefault();
-
-submit()
-})
